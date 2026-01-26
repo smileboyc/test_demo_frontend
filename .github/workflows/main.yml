@@ -45,8 +45,7 @@ jobs:
 
       - name: Run TestSprite Tests
         id: testsprite
-        uses: ./  # Use local action (for development)
-        # For production, use: uses: smileboyc/testsrpite_github_action@v1
+        uses: smileboyc/testsrpite_github_action@main
         with:
           project_id: ${{ secrets.TESTSPRITE_PROJECT_ID || 'your-project-id' }}
           mode: ${{ github.event.inputs.test_mode || 'all' }}
