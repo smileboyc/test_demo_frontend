@@ -25,6 +25,7 @@ export default tseslint.config([
       // Optionally, add this for stylistic rules
       ...tseslint.configs.stylisticTypeChecked,
 
+
       // Other configs...
     ],
     languageOptions: {
