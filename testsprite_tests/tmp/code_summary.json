@@ -1,0 +1,62 @@
+{
+  "tech_stack": [
+    "TypeScript",
+    "React",
+    "Vite",
+    "Material-UI",
+    "React Router"
+  ],
+  "features": [
+    {
+      "name": "Authentication System",
+      "description": "User login and authentication context management with test credentials (example@gmail.com / 123456789)",
+      "files": [
+        "src/App.tsx",
+        "src/pages/Login.tsx"
+      ]
+    },
+    {
+      "name": "Search Functionality",
+      "description": "Search and browse hotels and flights with location/route filters, display results in cards, and book items",
+      "files": [
+        "src/pages/Search.tsx"
+      ]
+    },
+    {
+      "name": "Booking Feature",
+      "description": "Placeholder page for booking functionality",
+      "files": [
+        "src/pages/Booking.tsx"
+      ]
+    },
+    {
+      "name": "Reviews System",
+      "description": "View and submit reviews for hotels and flights with rating and comment functionality",
+      "files": [
+        "src/pages/Reviews.tsx"
+      ]
+    },
+    {
+      "name": "Booking History",
+      "description": "Display user's booking history with hotel and flight details",
+      "files": [
+        "src/pages/BookingHistory.tsx"
+      ]
+    },
+    {
+      "name": "Admin Panel",
+      "description": "Administrative interface to add and delete hotels and flights",
+      "files": [
+        "src/pages/Admin.tsx"
+      ]
+    },
+    {
+      "name": "Routing",
+      "description": "React Router configuration with protected routes and navigation",
+      "files": [
+        "src/App.tsx"
+      ]
+    }
+  ]
+}
+

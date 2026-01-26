@@ -1,0 +1,19 @@
+{
+  "status": "commited",
+  "type": "frontend",
+  "scope": "codebase",
+  "localEndpoint": "http://localhost:4173",
+  "loginUser": "example@gmail.com",
+  "loginPassword": "123456789",
+  "executionArgs": {
+    "projectName": "frontend1128",
+    "projectPath": "C:\\Users\\25498\\Desktop\\work\\testsprite\\WebAppEval-bench\\projects\\travel-booking-platform\\code\\originalCode\\frontend1128",
+    "testIds": [],
+    "additionalInstruction": "",
+    "envs": {
+      "API_URL": "https://api.testsprite.com:11443",
+      "API_KEY": "sk-user-4IcQ5UGmJ1ONlHUFY3N21sL2m0uMm75vSbnzJ6r6qDqv_vk6kWwVymOSBECs2nEIC5CuDL8bKbW7yzdDNKk3MekmUyTgyTxlqSBfdfNkFTZQHGNcOgwnpZZD3uSuhWP02xo"
+    }
+  },
+  "proxy": "http://872ed98c-2b45-4c3c-b330-c225adfda0ac:C3oPXqpOz33LcrQWC8VwYm2QqpykvinZ@tun.testsprite.com:8080"
+}

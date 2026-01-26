@@ -1,0 +1,470 @@
+[
+  {
+    "id": "TC001",
+    "title": "Login with valid test credentials",
+    "description": "Verify that a user can log in successfully using the hardcoded test credentials",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the login page"
+      },
+      {
+        "type": "action",
+        "description": "Enter valid email 'example@gmail.com' and password '123456789'"
+      },
+      {
+        "type": "action",
+        "description": "Click the login button"
+      },
+      {
+        "type": "assertion",
+        "description": "User is logged in and redirected to a protected main page"
+      }
+    ]
+  },
+  {
+    "id": "TC002",
+    "title": "Login with invalid credentials",
+    "description": "Verify that login fails with incorrect email or password and shows an error message",
+    "category": "error handling",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the login page"
+      },
+      {
+        "type": "action",
+        "description": "Enter invalid email or password"
+      },
+      {
+        "type": "action",
+        "description": "Click the login button"
+      },
+      {
+        "type": "assertion",
+        "description": "User remains on the login page and receives an appropriate error message"
+      }
+    ]
+  },
+  {
+    "id": "TC003",
+    "title": "Access protected route without login",
+    "description": "Verify that user cannot access protected routes such as Search or BookingHistory without logging in",
+    "category": "security",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate directly to a protected route in the app, e.g., /search or /booking-history"
+      },
+      {
+        "type": "assertion",
+        "description": "User is redirected to the login page"
+      }
+    ]
+  },
+  {
+    "id": "TC004",
+    "title": "Search hotels by location filter",
+    "description": "Verify that searching hotels by location returns correct filtered hotel cards",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Log in with valid credentials"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to the Search page"
+      },
+      {
+        "type": "action",
+        "description": "Input a valid hotel location filter"
+      },
+      {
+        "type": "action",
+        "description": "Submit the search"
+      },
+      {
+        "type": "assertion",
+        "description": "Search results display hotel cards matching the input location"
+      }
+    ]
+  },
+  {
+    "id": "TC005",
+    "title": "Search flights by route filter",
+    "description": "Verify that searching flights by route filter returns correct filtered flight cards",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Log in with valid credentials"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to the Search page"
+      },
+      {
+        "type": "action",
+        "description": "Input a valid flight route filter"
+      },
+      {
+        "type": "action",
+        "description": "Submit the search"
+      },
+      {
+        "type": "assertion",
+        "description": "Search results display flight cards matching the input route"
+      }
+    ]
+  },
+  {
+    "id": "TC006",
+    "title": "Search with empty filters shows all results",
+    "description": "Verify that submitting search without filters returns all available hotels or flights",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Log in with valid credentials"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to the Search page"
+      },
+      {
+        "type": "action",
+        "description": "Leave location and route filters empty"
+      },
+      {
+        "type": "action",
+        "description": "Submit the search"
+      },
+      {
+        "type": "assertion",
+        "description": "Search results display all hotels and flights available in local data"
+      }
+    ]
+  },
+  {
+    "id": "TC007",
+    "title": "Simulate booking a hotel",
+    "description": "Verify user can select a hotel from search results and proceed to the simulated booking placeholder page",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Log in with valid credentials and search for hotels"
+      },
+      {
+        "type": "action",
+        "description": "Select a hotel card from search results"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to the booking placeholder page for the selected hotel"
+      },
+      {
+        "type": "assertion",
+        "description": "Booking page shows placeholder content indicating simulation"
+      }
+    ]
+  },
+  {
+    "id": "TC008",
+    "title": "Simulate booking a flight",
+    "description": "Verify user can select a flight from search results and proceed to the simulated booking placeholder page",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Log in with valid credentials and search for flights"
+      },
+      {
+        "type": "action",
+        "description": "Select a flight card from search results"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to the booking placeholder page for the selected flight"
+      },
+      {
+        "type": "assertion",
+        "description": "Booking page shows placeholder content indicating simulation"
+      }
+    ]
+  },
+  {
+    "id": "TC009",
+    "title": "Booking recorded in history after simulation",
+    "description": "Verify that after simulating a booking, the booking is recorded and visible in the user's booking history",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Log in and simulate booking a hotel or flight"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to Booking History page"
+      },
+      {
+        "type": "assertion",
+        "description": "Booking history lists the recently simulated booking with accurate details"
+      }
+    ]
+  },
+  {
+    "id": "TC010",
+    "title": "Submit a review for a booked hotel",
+    "description": "Verify user can submit a rating and comment as a review for a hotel they have booked",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Log in and identify a previously booked hotel in booking history"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to the Reviews page for that hotel"
+      },
+      {
+        "type": "action",
+        "description": "Submit a review with rating and comment"
+      },
+      {
+        "type": "assertion",
+        "description": "Review is accepted and displayed in the list of reviews for that hotel"
+      }
+    ]
+  },
+  {
+    "id": "TC011",
+    "title": "Submit a review for a booked flight",
+    "description": "Verify user can submit a rating and comment as a review for a flight they have booked",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Log in and identify a previously booked flight in booking history"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to the Reviews page for that flight"
+      },
+      {
+        "type": "action",
+        "description": "Submit a review with rating and comment"
+      },
+      {
+        "type": "assertion",
+        "description": "Review is accepted and displayed in the list of reviews for that flight"
+      }
+    ]
+  },
+  {
+    "id": "TC012",
+    "title": "View review list for a hotel or flight",
+    "description": "Verify that users can view all submitted reviews with ratings and comments for a hotel or flight",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Log in and navigate to the Reviews page of a selected hotel or flight"
+      },
+      {
+        "type": "assertion",
+        "description": "All previously submitted reviews with rating and comment are displayed correctly"
+      }
+    ]
+  },
+  {
+    "id": "TC013",
+    "title": "View booking history list",
+    "description": "Verify that the user can view a list of all their past bookings including detailed hotel and flight data",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Log in and navigate to the Booking History page"
+      },
+      {
+        "type": "assertion",
+        "description": "All past hotel and flight bookings are listed with relevant details"
+      }
+    ]
+  },
+  {
+    "id": "TC014",
+    "title": "Admin adds a new hotel entry",
+    "description": "Verify that an administrator can add a new hotel entry in the admin panel and it appears in searches",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Log in as admin user"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to the Admin panel"
+      },
+      {
+        "type": "action",
+        "description": "Fill in details for a new hotel and submit to add"
+      },
+      {
+        "type": "assertion",
+        "description": "New hotel appears in the dataset and is searchable by users"
+      }
+    ]
+  },
+  {
+    "id": "TC015",
+    "title": "Admin deletes a hotel entry",
+    "description": "Verify that an administrator can delete an existing hotel entry and it no longer appears in searches",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Log in as admin user"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to the Admin panel"
+      },
+      {
+        "type": "action",
+        "description": "Select an existing hotel entry and delete it"
+      },
+      {
+        "type": "assertion",
+        "description": "Deleted hotel is removed from the dataset and no longer appears in search results"
+      }
+    ]
+  },
+  {
+    "id": "TC016",
+    "title": "Admin adds a new flight entry",
+    "description": "Verify that an administrator can add a new flight entry and the flight becomes searchable",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Log in as admin user"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to the Admin panel"
+      },
+      {
+        "type": "action",
+        "description": "Fill in details for a new flight and submit"
+      },
+      {
+        "type": "assertion",
+        "description": "New flight is added and visible in flight search results"
+      }
+    ]
+  },
+  {
+    "id": "TC017",
+    "title": "Admin deletes a flight entry",
+    "description": "Verify that an administrator can delete an existing flight entry and it no longer appears in searches",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Log in as admin user"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to the Admin panel"
+      },
+      {
+        "type": "action",
+        "description": "Select an existing flight entry and delete it"
+      },
+      {
+        "type": "assertion",
+        "description": "Deleted flight no longer appears in the flight search results"
+      }
+    ]
+  },
+  {
+    "id": "TC018",
+    "title": "UI navigation using React Router",
+    "description": "Verify that navigation between login, search, booking, reviews, booking history, and admin pages operates correctly with protected routes",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Log in with valid credentials"
+      },
+      {
+        "type": "action",
+        "description": "Navigate sequentially between Search, BookingHistory, Reviews, and Admin pages"
+      },
+      {
+        "type": "assertion",
+        "description": "All pages load correctly and protected routes restrict access when not logged in"
+      }
+    ]
+  },
+  {
+    "id": "TC019",
+    "title": "Application runs locally without errors",
+    "description": "Verify that the entire application runs locally with minimal setup without throwing runtime errors",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Start the application locally"
+      },
+      {
+        "type": "assertion",
+        "description": "Application loads, login works, and main features (search, booking simulation, reviews, booking history, admin) operate without errors"
+      }
+    ]
+  },
+  {
+    "id": "TC020",
+    "title": "Review submission validation",
+    "description": "Verify that review submission validates for required fields such as rating and prevents empty submissions",
+    "category": "error handling",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to a review submission form for a hotel or flight"
+      },
+      {
+        "type": "action",
+        "description": "Attempt to submit a review with missing rating or comment"
+      },
+      {
+        "type": "assertion",
+        "description": "Review submission is blocked and appropriate validation messages are displayed"
+      }
+    ]
+  }
+]
