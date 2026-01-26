@@ -28,6 +28,7 @@ export default tseslint.config([
 
 
       // Other configs...
+
     ],
     languageOptions: {
       parserOptions: {
