@@ -1,9 +1,17 @@
-name: Vercel Preview
+name: TestSprite E2E Tests
 
 on:
+  # Trigger on push to main branch
   push:
-    branches-ignore:
+    branches:
       - main
+      - master
+  
+  # Trigger on pull requests
+  pull_request:
+    branches:
+      - main
+      - master
 
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
