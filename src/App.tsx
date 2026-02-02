@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, Link } from 'react-router-dom';
-import { AppBar, Toolbar, Typography, Button, CssBaseline, Container, ThemeProvider, createTheme, Box } from '@mui/material';
+import { AppBar, Toolbar, Typography, Button, CssBaseline, Container, ThemeProvider, Box } from '@mui/material';
 
 // Placeholder pages
 const Login = React.lazy(() => import('./pages/Login'));
@@ -22,11 +22,11 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType>({
   isAuthenticated: false,
   login: () => false,
-  logout: () => {},
+  logout: () => { },
 });
 export const useAuth = () => useContext(AuthContext);
 
-const theme = createTheme();
+import theme from './theme';
 
 const App: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -45,20 +45,30 @@ const App: React.FC = () => {
       <CssBaseline />
       <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
         <Router>
-          <AppBar position="static">
-            <Toolbar>
-              <Typography variant="h6" sx={{ flexGrow: 1 }} component={Link} to="/" color="inherit" style={{ textDecoration: 'none' }}>
-                Travel Booking Platform
+          <AppBar position="sticky" elevation={0}>
+            <Toolbar sx={{ justifyContent: 'space-between' }}>
+              <Typography variant="h6" sx={{ fontWeight: 800, color: 'primary.main', textDecoration: 'none' }} component={Link} to="/">
+                Travel<Box component="span" sx={{ color: 'text.primary' }}>Swift</Box>
               </Typography>
-              {isAuthenticated ? (
-                <Button color="inherit" onClick={logout}>Logout</Button>
-              ) : (
-                <Button color="inherit" component={Link} to="/login">Login</Button>
-              )}
+              <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+                {isAuthenticated && (
+                  <>
+                    <Button color="inherit" component={Link} to="/search">Search</Button>
+                    <Button color="inherit" component={Link} to="/history">History</Button>
+                    <Button color="inherit" component={Link} to="/reviews">Reviews</Button>
+                    <Button color="inherit" component={Link} to="/admin">Admin</Button>
+                  </>
+                )}
+                {isAuthenticated ? (
+                  <Button variant="outlined" color="primary" onClick={logout} sx={{ ml: 2 }}>Logout</Button>
+                ) : (
+                  <Button variant="contained" color="primary" component={Link} to="/login">Login</Button>
+                )}
+              </Box>
             </Toolbar>
           </AppBar>
-          <Container maxWidth={false} disableGutters sx={{ minHeight: '100vh', width: '100vw', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-            <React.Suspense fallback={<Box display="flex" alignItems="center" justifyContent="center" minHeight="80vh">Loading...</Box>}>
+          <Container maxWidth="lg" sx={{ py: 4, minHeight: 'calc(100vh - 64px)' }} className="page-container">
+            <React.Suspense fallback={<Box display="flex" alignItems="center" justifyContent="center" minHeight="60vh">Loading...</Box>}>
               <Routes>
                 <Route path="/login" element={<Login />} />
                 <Route path="/search" element={isAuthenticated ? <Search /> : <Navigate to="/login" />} />

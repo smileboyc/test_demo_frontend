@@ -21,13 +21,34 @@ const Login: React.FC = () => {
   };
 
   return (
-    <Box display="flex" justifyContent="center" alignItems="center" minHeight="60vh">
-      <Card sx={{ minWidth: 350, p: 2 }}>
-        <CardContent>
-          <Typography variant="h5" gutterBottom>Login</Typography>
+    <Box
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      minHeight="80vh"
+      sx={{
+        background: 'radial-gradient(circle at top right, rgba(124, 58, 237, 0.05), transparent), radial-gradient(circle at bottom left, rgba(37, 99, 235, 0.05), transparent)'
+      }}
+    >
+      <Card sx={{
+        minWidth: 400,
+        p: 4,
+        borderRadius: 4,
+        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.08)'
+      }}>
+        <CardContent sx={{ p: 0 }}>
+          <Box textAlign="center" mb={4}>
+            <Typography variant="h4" gutterBottom color="primary" sx={{ fontWeight: 800 }}>
+              Welcome Back
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Please enter your details to sign in
+            </Typography>
+          </Box>
+
           <form onSubmit={handleSubmit}>
             <TextField
-              label="Email"
+              label="Email Address"
               type="email"
               value={email}
               onChange={e => setEmail(e.target.value)}
@@ -35,6 +56,7 @@ const Login: React.FC = () => {
               margin="normal"
               required
               autoComplete="username"
+              placeholder="example@gmail.com"
             />
             <TextField
               label="Password"
@@ -45,17 +67,31 @@ const Login: React.FC = () => {
               margin="normal"
               required
               autoComplete="current-password"
+              sx={{ mb: 3 }}
             />
-            {error && <Alert severity="error" sx={{ mt: 2 }}>{error}</Alert>}
-            <Button type="submit" variant="contained" color="primary" fullWidth sx={{ mt: 2 }}>
-              Login
+            {error && <Alert severity="error" sx={{ mb: 2, borderRadius: 2 }}>{error}</Alert>}
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              fullWidth
+              size="large"
+              sx={{
+                py: 1.5,
+                fontSize: '1rem'
+              }}
+            >
+              Sign In
             </Button>
           </form>
-          <Box mt={3} fontSize={12} color="text.secondary">
-            <Typography variant="body2">
-              <strong>Test Account:</strong><br />
-              Email: <code>example@gmail.com</code><br />
-              Password: <code>123456789</code>
+
+          <Box mt={4} p={2} sx={{ bgcolor: 'background.default', borderRadius: 2, border: '1px dashed', borderColor: 'divider' }}>
+            <Typography variant="caption" display="block" color="text.secondary" gutterBottom sx={{ fontWeight: 600, textTransform: 'uppercase' }}>
+              Prototyping Access
+            </Typography>
+            <Typography variant="caption" sx={{ fontFamily: 'monospace' }}>
+              Email: example@gmail.com<br />
+              Pass: 123456789
             </Typography>
           </Box>
         </CardContent>
