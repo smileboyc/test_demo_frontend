@@ -15,7 +15,7 @@ export default tseslint.config([
 
     files: ['**/*.{ts,tsx}'],
 
-    
+
       // Other configs...
       // Remove tseslint.configs.recommended and replace with this
       ...tseslint.configs.recommendedTypeChecked,
