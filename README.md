@@ -9,6 +9,7 @@ Currently, two official plugins are available:
 If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 ```js
 export default tseslint.config([
+
   globalIgnores(['dist']),
   {
     files: ['**/*.{ts,tsx}'],
