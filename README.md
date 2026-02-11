@@ -10,7 +10,6 @@ If you are developing a production application, we recommend updating the config
 ```js
 export default tseslint.config([
   globalIgnores(['dist']),
-
   {
     files: ['**/*.{ts,tsx}'],
 
