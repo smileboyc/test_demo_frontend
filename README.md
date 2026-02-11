@@ -12,6 +12,7 @@ export default tseslint.config([
 
   globalIgnores(['dist']),
   {
+
     files: ['**/*.{ts,tsx}'],
 
     
