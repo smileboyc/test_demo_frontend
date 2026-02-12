@@ -13,7 +13,6 @@ export default tseslint.config([
   globalIgnores(['dist']),
   {
     files: ['**/*.{ts,tsx}'],
-
       // Other configs...
       // Remove tseslint.configs.recommended and replace with this
       ...tseslint.configs.recommendedTypeChecked,
