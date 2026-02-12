@@ -42,6 +42,7 @@ You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-re
 // eslint.config.js
 
 import reactX from 'eslint-plugin-react-x'
+
 import reactDom from 'eslint-plugin-react-dom'
 
 export default tseslint.config([
