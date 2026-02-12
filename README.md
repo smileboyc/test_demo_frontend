@@ -48,6 +48,7 @@ import reactDom from 'eslint-plugin-react-dom'
 export default tseslint.config([
   globalIgnores(['dist']),
   {
+    
     files: ['**/*.{ts,tsx}'],
     extends: [
       // Other configs...
