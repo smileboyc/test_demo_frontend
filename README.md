@@ -21,6 +21,7 @@ export default tseslint.config([
       ...tseslint.configs.stylisticTypeChecked,
       // Other configs...
     ],
+
     languageOptions: {
       parserOptions: {
         project: ['./tsconfig.node.json', './tsconfig.app.json'],
