@@ -2,18 +2,19 @@
   "status": "commited",
   "type": "frontend",
   "scope": "codebase",
-  "localEndpoint": "http://localhost:4173",
+  "localEndpoint": "http://localhost:5173",
   "loginUser": "example@gmail.com",
   "loginPassword": "123456789",
   "executionArgs": {
-    "projectName": "frontend1128",
-    "projectPath": "C:\\Users\\25498\\Desktop\\work\\testsprite\\WebAppEval-bench\\projects\\travel-booking-platform\\code\\originalCode\\frontend1128",
+    "projectName": "test_demo_frontend",
+    "projectPath": "C:\\Users\\25498\\Desktop\\work\\test_demo_frontend",
     "testIds": [],
     "additionalInstruction": "",
+    "serverMode": "development",
     "envs": {
-      "API_URL": "https://api.testsprite.com:11443",
-      "API_KEY": "sk-user-4IcQ5UGmJ1ONlHUFY3N21sL2m0uMm75vSbnzJ6r6qDqv_vk6kWwVymOSBECs2nEIC5CuDL8bKbW7yzdDNKk3MekmUyTgyTxlqSBfdfNkFTZQHGNcOgwnpZZD3uSuhWP02xo"
+      "API_KEY": "sk-user-HUn4jHu5uh5_FJuRVPwdSEThv3dJfPlTNv30c8TKBkNueeOUV4_lfnx4AwTc6y5g2HrlK-sVtHjL68rZykzud8GI7vEdiDwPMfkIPuV7o8UWfFZU1cler6mBU5TTHX5E-1M"
     }
   },
-  "proxy": "http://872ed98c-2b45-4c3c-b330-c225adfda0ac:C3oPXqpOz33LcrQWC8VwYm2QqpykvinZ@tun.testsprite.com:8080"
+  "serverPort": 1346,
+  "proxy": "http://03508b16-cf2a-4bb2-b6ce-0a4b848ad1ba:vAi0ncq28acLEZ7L9NQrmhNdy16cMsRz@tun.testsprite.com:8080"
 }

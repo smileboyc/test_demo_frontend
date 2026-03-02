@@ -1,0 +1,107 @@
+version: "2"
+type: frontend
+tech_stack:
+  - TypeScript
+  - React 19
+  - Vite 7
+  - MUI (Material-UI) 7
+  - react-router-dom 7
+routes:
+  - path: /login
+    file: src/pages/Login.tsx
+    auth_required: false
+    description: User login page
+  - path: /search
+    file: src/pages/Search.tsx
+    auth_required: true
+    description: Search hotels and flights, book items
+  - path: /booking
+    file: src/pages/Booking.tsx
+    auth_required: true
+    description: Booking page placeholder
+  - path: /reviews
+    file: src/pages/Reviews.tsx
+    auth_required: true
+    description: View and submit reviews for hotels and flights
+  - path: /history
+    file: src/pages/BookingHistory.tsx
+    auth_required: true
+    description: View booking history
+  - path: /admin
+    file: src/pages/Admin.tsx
+    auth_required: true
+    description: Admin content management for hotels and flights
+features:
+  - name: User Login
+    description: Login with email and password (test credentials example@gmail.com / 123456789)
+    files:
+      - src/pages/Login.tsx
+      - src/App.tsx
+    entry_route: /login
+    user_interactions:
+      - Fill email input field
+      - Fill password input field
+      - Click Sign In button to submit
+      - See error message on invalid credentials
+      - Redirect to /search on success
+    api_calls: []
+    auth_required: false
+  - name: Search Hotels and Flights
+    description: Search hotels by location, flights by from/to; book hotel or flight
+    files:
+      - src/pages/Search.tsx
+      - src/mockData.ts
+    entry_route: /search
+    user_interactions:
+      - Switch between Hotels and Flights tabs
+      - Fill search by location (Hotels) or From/To (Flights)
+      - View list of hotels or flights
+      - Click Book Now or Book Flight to add booking
+      - See snackbar success or failure message
+    api_calls: []
+    auth_required: true
+  - name: Booking History
+    description: View list of user bookings
+    files:
+      - src/pages/BookingHistory.tsx
+      - src/mockData.ts
+    entry_route: /history
+    user_interactions:
+      - See list of bookings or empty state
+    api_calls: []
+    auth_required: true
+  - name: Reviews
+    description: Select hotel or flight, submit rating and comment; view recent reviews
+    files:
+      - src/pages/Reviews.tsx
+      - src/mockData.ts
+    entry_route: /reviews
+    user_interactions:
+      - Switch between Hotels and Flights tabs
+      - Select hotel or flight from dropdown
+      - Set rating with Rating component
+      - Fill comment textarea
+      - Click Post Review to submit
+      - See snackbar and refreshed reviews list
+    api_calls: []
+    auth_required: true
+  - name: Admin Content Management
+    description: Add new hotels/flights; delete existing hotels/flights (in-memory only)
+    files:
+      - src/pages/Admin.tsx
+      - src/mockData.ts
+    entry_route: /admin
+    user_interactions:
+      - Switch between Hotels and Flights tabs
+      - Fill Add New Hotel or Add New Flight form and submit
+      - See new item in list and snackbar
+      - Click Remove on a hotel or flight card to delete
+    api_calls: []
+    auth_required: true
+known_limitations:
+  - issue: All data is in-memory via mockApi; no real backend persistence
+    location: src/mockData.ts
+    impact: Bookings, reviews, admin CRUD only persist during session
+  - issue: Booking page is placeholder only
+    location: src/pages/Booking.tsx
+    impact: No actual booking flow on /booking route
